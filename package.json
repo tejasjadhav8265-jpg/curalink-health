@@ -1,0 +1,42 @@
+{
+  "name": "medical-appointment-system",
+  "version": "1.0.0",
+  "description": "Full-stack doctor & medical appointment management system (demo/educational)",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "seed:admin": "node database/seed-admin.js",
+    "seed": "node database/seed.js",
+    "seed:doctors": "node database/seed-doctors.js",
+    "seed:content": "node database/seed-content.js",
+    "test": "node --test tests/rules.test.js",
+    "smoke": "node scripts/smoke-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.16",
+    "pdfkit": "^0.15.2",
+    "xss": "^1.0.15"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.3.0",
+    "nodemon": "^3.1.9"
+  }
+}

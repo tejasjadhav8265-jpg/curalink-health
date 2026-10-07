@@ -1,0 +1,35 @@
+/* Phase 9: finishing touches shared by every page. Loaded last. */
+html { scroll-padding-top: 5rem; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+body > main { flex: 1 0 auto; }
+body > .site-footer, body > #site-footer { flex-shrink: 0; }
+[hidden] { display: none !important; }
+img, svg { max-width: 100%; }
+::selection { background: var(--c-primary-soft); color: var(--c-ink); }
+p, li, td, dd { overflow-wrap: anywhere; }
+
+/* people on phones: bigger tap targets */
+@media (max-width: 640px) {
+  .btn, .form-control, .form-select { min-height: 44px; }
+  .chip, .nav-link { padding-top: .5rem; padding-bottom: .5rem; }
+}
+
+/* shown only when JavaScript is switched off */
+.noscript-note { background: #FFF3DC; color: #6B450A; border-bottom: 1px solid #EBCB8B; padding: .8rem 1rem; text-align: center; font-weight: 600; }
+
+/* error pages */
+.error-page { text-align: center; padding: 4rem 0 3rem; max-width: 640px; margin: 0 auto; }
+.error-code { font-family: var(--font-display); font-size: clamp(5rem, 18vw, 9rem); line-height: 1; margin: 0; color: var(--c-primary); opacity: .9; }
+.error-page h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: .4rem 0 .6rem; }
+.error-text { color: var(--c-muted); font-size: 1.05rem; }
+.error-path { font-family: ui-monospace, Consolas, monospace; font-size: .85rem; color: var(--c-muted); background: #EEF4F5; display: inline-block; padding: .2rem .6rem; border-radius: 6px; max-width: 100%; }
+.error-actions { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-top: 1.5rem; }
+
+/* printing (for example a prescription or an appointment summary) */
+@media print {
+  body { background: #fff; display: block; }
+  #site-header, #site-footer, .site-footer, .skip-link, .btn, button, .pager, #toast-region, nav { display: none !important; }
+  .panel, .info-card, .chart-card { box-shadow: none !important; border: 1px solid #999 !important; break-inside: avoid; }
+  a { color: #000; text-decoration: none; }
+  main .container-xxl { max-width: 100%; padding: 0; }
+}

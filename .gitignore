@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.log
+.DS_Store
+# uploaded patient reports are private and must never be committed
+uploads/reports/*
+!uploads/reports/.gitkeep
